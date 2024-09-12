@@ -1,0 +1,79 @@
+@use "../sass/variable.scss" as *;
+
+
+
+.apartment-header {
+    display: flex;
+    margin-bottom: 2rem;
+    gap: 1rem;
+    @media screen and (width <= 768px) {
+      flex-direction: column;
+    }
+    .apartment-title {
+      flex-grow: 1;
+    }
+    .apartment-owmer {
+      display: flex;
+      flex-direction: column;
+      @media screen and (width <= 768px) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+    .apartment-owmer-details {
+      display: flex;
+      gap: 0.5rem;
+      @media screen and (width <= 768px) {
+        order: 1;
+      }
+    }
+    .apartment-owmer-badge {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      background-color: $background-dark;
+    }
+    .apartment-owmer-stars {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.2rem;
+      color: $background-dark;
+      * {
+        font-size: 2rem;
+      }
+      .on {
+        color: $color-primary;
+      }
+    }
+    h1 {
+      font-weight: 400;
+      margin-block: 0;
+    }
+    h2 {
+      font-weight: 400;
+      margin-top: 0.5em;
+      margin-bottom: 0.2em;
+      font-size: 20px;
+    }
+  
+    .apartment-tags {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 150px));
+      gap: 1rem;
+      span {
+        background-color: $color-primary;
+        color: $color-tertiary;
+        padding: 0.3em 0.5em;
+        border-radius: 0.7rem;
+        text-align: center;
+      }
+    }
+    h3 {
+      margin-block: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      font-weight: 400;
+    }
+  }

@@ -1,8 +1,8 @@
 import React from 'react'
-import "../components/Cards.css"
+import "../layout/Cards.scss"
 function Cards({children}) {
   return (
-    <div className='Cards'>{...children}</div>
+    <div className='Cards'>{children}</div>
   )
 }
 

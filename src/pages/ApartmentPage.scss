@@ -1,0 +1,10 @@
+@use "../sass/variable.scss"as *;
+
+.apartment-page {
+    color:$color-primary;
+    .apartment-area{
+        display:flex;
+        gap : 1rem;
+    }
+
+}
