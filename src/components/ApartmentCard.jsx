@@ -2,14 +2,19 @@ import React from 'react'
 import "./ApartmentCard.scss"
 import { Link } from 'react-router-dom';
 
-function ApartmentCard() {
+function ApartmentCard(props) {
+  
   return (
-    <div className='apartment'>
-    <Link to="/flat">
-     <div className='apartment-subtitle'>Titre de la location</div>
-    </Link>
+    <Link to="/flat" 
+    state={{ 
+      apartmentId: props.id}}
+      >
 
+      <div className='apartment'>
+      <img src={props.imgUrl} alt=''/>
+     <div className='apartment-subtitle'>{props.title}</div>
     </div>
+    </Link>
   )
 }
 

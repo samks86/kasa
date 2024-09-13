@@ -3,8 +3,9 @@
     position: relative;
     max-width: 100%;
     padding-inline: 2rem;
-    background-image: url("https://unsplash.it/1920/1080");
+    background-image: url(src/assets/image-source-1.png);
     min-width: 140px;
+    height: 150px;
     margin: auto;
     border-radius: 1rem;
     display: grid;
@@ -20,5 +21,8 @@
     content: "";
     inset:0;
     opacity: 0.5;
+}
+h2{
+    font-size: 48px;
 }
 }
