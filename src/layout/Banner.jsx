@@ -1,12 +1,13 @@
-import React from 'react'
-import"../layout/Banner.scss"
+import React from 'react';
+import "../layout/Banner.scss";
 
-function Banner() {
+function Banner({ imageUrl, showTitle = true }) {
   return (
     <div className="banner">
-    <h2>Chez vous, partout et ailleurs</h2>
+      <img src={imageUrl} alt="Banner" className="banner-image" />
+      {showTitle && <h2 className="title">Chez vous, partout et ailleurs</h2>}
     </div>
-  )
+  );
 }
 
-export default Banner
+export default Banner;

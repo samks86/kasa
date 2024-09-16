@@ -2,12 +2,14 @@ import React, { useEffect, useState} from 'react';
 import ImageBanner from "../components/ImageBanner";
 import  DescriptionPanel from "../components/DescriptionPanel";
 import "./About.scss";
+import Banner from '../layout/Banner';
+import image2 from '../assets/image-source-2.png';
 
 
 function About() {
   return (
     <>
-    <ImageBanner/>
+    <Banner imageUrl={image2}showTitle={false}/>
     <div className='about-container'>
     <DescriptionPanel title="Fiabilité" content="roi du code"/>
     <DescriptionPanel title= "Respect" content="roi du code"/>

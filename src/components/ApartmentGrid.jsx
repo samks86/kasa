@@ -17,7 +17,7 @@ fetch ("db.json")
   return (
     <div className="grid"> 
     {apartments.map((apartment)=> (
-      <ApartmentCard title={apartment.title} imgUrl={apartment.cover} id={apartment.id}/>
+      <ApartmentCard title={apartment.title} imgUrl={apartment.cover} id={apartment.id} key={apartment.id}/>
       ))}
     </div>
   )

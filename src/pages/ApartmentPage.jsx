@@ -27,7 +27,7 @@ function ApartmentPage() {
        <ApartmentHeader flat={flat}/>
     <div className="apartment-area">
         <DescriptionPanel title="Description"content={flat.description} />
-        <DescriptionPanel title="Equipement"content={flat.equipments.map((equipments)=>(<li>{equipments}</li>))}/> 
+        <DescriptionPanel title="Equipement"content={flat.equipments.map((equipments, i)=>(<li key={i}> {equipments}</li>))}/> 
   
     </div>
  </div>
