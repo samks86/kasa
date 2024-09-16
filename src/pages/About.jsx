@@ -1,23 +1,38 @@
-import React, { useEffect, useState} from 'react';
-import ImageBanner from "../components/ImageBanner";
-import  DescriptionPanel from "../components/DescriptionPanel";
+import React, { useEffect, useState } from 'react';
+import Collapse from "../components/Collapse";
 import "./About.scss";
 import Banner from '../layout/Banner';
 import image2 from '../assets/image-source-2.png';
 
-
 function About() {
+  // Initialisation de l'état pour stocker les données JSON
+  const [aboutData, setAboutData] = useState([]);
+
+  // Récupération des données du fichier about.json
+  useEffect(() => {
+    fetch("/about.json")
+      .then(response => response.json())
+      .then(data => setAboutData(data))
+      .catch(error => console.error("Erreur lors de la récupération des données :", error));
+  }, []);
+
   return (
     <>
-    <Banner imageUrl={image2}showTitle={false}/>
-    <div className='about-container'>
-    <DescriptionPanel title="Fiabilité" content="roi du code"/>
-    <DescriptionPanel title= "Respect" content="roi du code"/>
-    <DescriptionPanel title = "Service" content="roi du code"/>
-    <DescriptionPanel title= "Responsabilité" content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."/>
-    </div>
+      {/* Bannière sans titre */}
+      <Banner imageUrl={image2} showTitle={false} />
+
+      {/* Affichage des données récupérées */}
+      <div className='about-container'>
+        {aboutData.length > 0 ? (
+          aboutData.map((item, index) => (
+            <Collapse key={index} title={item.title} content={item.content} />
+          ))
+        ) : (
+          <p>...laoding</p>
+        )}
+      </div>
     </>
-  )
+  );
 }
 
-export default About
+export default About;

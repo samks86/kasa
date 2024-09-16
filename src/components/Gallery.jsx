@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import "./ImageBanner.scss";
+import "./Gallery.scss";
 
-function ImageBanner(props) {
+function Gallery(props) {
   const pictures = props.pictures;
 
   const [currentPicture, setCurrentPicture] = useState(0);
@@ -54,4 +54,4 @@ const getCarouselOrDefaultImage = () => {
   );
 }
 
-export default ImageBanner
+export default Gallery
