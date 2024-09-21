@@ -1,24 +1,27 @@
 import { useState } from "react";
-import "./Collapse.scss"
+import "./Collapse.scss";
 
 function Collapse(props) {
   const [isContentVisible, setIsContentVisible] = useState(false);
+  
   const showContent = () => {
     setIsContentVisible(!isContentVisible);
   };
-  const chevronClass = (isContentVisible ? "fa-chevron-up" : "fa-chevron-down") + " fas";
 
-    return (
-          <div className="description-panel">
-          <p className='description-header' onClick={showContent}>
-            <span>{props.title} </span>
-            <i className={chevronClass}></i>
-            </p>
+  const chevronClass = `fas ${isContentVisible ? "fa-chevron-up rotate" : "fa-chevron-down"}`;
 
+  return (
+    <div className="description-panel">
+      <p className="description-header" onClick={showContent}>
+        <span>{props.title}</span>
+        <i className={chevronClass}></i>
+      </p>
 
-          {isContentVisible &&< p className='description-content'>{props.content}</p>}
+      <div className={`description-content ${isContentVisible ? "visible" : "hidden"}`}>
+        {props.content}
       </div>
-    );
-  }
+    </div>
+  );
+}
 
-  export default Collapse
+export default Collapse;

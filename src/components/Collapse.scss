@@ -1,46 +1,52 @@
 @use "../sass/variable.scss" as *;
-.description-panel{
-    margin-bottom: 1rem;
-    flex-basis: 50%;
-    overflow: hidden;
-    p{
-        margin-block: 0;
-    }
-.description-header{
+
+.description-panel {
+  margin-bottom: 1rem;
+  flex-basis: 50%;
+  overflow: hidden;
+
+  p {
+    margin-block: 0;
+  }
+
+  .description-header {
     background-color: $color-primary;
     color: $color-tertiary;
     padding: 0.2em 1em;
-    border-radius: .7rem;
+    border-radius: 0.7rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
-    i{
-        font-size: 2rem;
-        cursor: pointer;
+
+    i {
+      font-size: 2rem;
+      transition: transform 0.3s ease;
     }
-}
-.description-content{
+
+    .rotate {
+      transform: rotate(180deg);
+    }
+  }
+
+  .description-content {
     background-color: $background-light;
     color: black;
     padding: 1rem;
     border-radius: 0 0 1rem 1rem;
-    position: relative;
-    top: -0.3rem;
-    z-index:-1;
-    animation: slide-in .3s ease-in-out;
-    &.hidden{
-        transform: translateY(-100%);
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+
+    &.hidden {
+      max-height: 0;
+      opacity: 0;
     }
-    &.visible{
-        transform: translateY(0);
+
+    &.visible {
+      max-height: 300px; // Ajuste cette valeur selon ton contenu
+      opacity: 1;
     }
-    
-}
-@keyframes slide-in {
-    from{
-        transform:translateY(-100%)
-    }     
-    
-}
+  }
 }

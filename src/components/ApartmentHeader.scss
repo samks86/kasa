@@ -58,9 +58,10 @@
     }
   
     .apartment-tags {
-      display: grid;
+      display: flex;
       grid-template-columns: repeat(auto-fit, minmax(100px, 150px));
       gap: 1rem;
+      flex-wrap: wrap;
       span {
         background-color: $color-primary;
         color: $color-tertiary;
