@@ -11,6 +11,7 @@
   margin-bottom: 2rem;
   max-width: 100%;
   border-radius: 2rem;
+  padding: 1rem 3rem;
   
   .banner-image {
     width: 100%;
@@ -25,5 +26,18 @@
     color: $color-tertiary;
     font-size: 2.5rem;
     text-align: center;
+  }  
+  .line-break {
+    display: none; /* Masque le <br /> par défaut */
+  }
+  
+  @media (max-width: 739px) {
+    .line-break {
+      display: block; /* Affiche le <br /> à 739px ou moins */
+    }
+  
+    .title {
+      white-space: normal; /* Permet au texte de revenir à la ligne */
+    }
   }
 }
